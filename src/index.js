@@ -6,6 +6,7 @@ import { BrowserRouter, Route } from 'react-router-dom'
 import promise from 'redux-promise'
 
 import PostsIndex from './components/posts_index'
+import PostsNew from './components/posts_new'
 
 import reducers from './reducers'
 
@@ -16,6 +17,7 @@ ReactDOM.render(
         <BrowserRouter>
             <div>
                 <Route path="/" component={PostsIndex} />
+                <Route path="/new" component={PostsNew} />
             </div>
         </BrowserRouter>
     </Provider>,
