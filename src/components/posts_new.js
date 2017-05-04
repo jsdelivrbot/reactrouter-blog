@@ -38,6 +38,29 @@ class PostsNew extends Component {
     }
 }
 
+function validate(values) {
+    // Object for tracking errors
+    const errors = {}
+
+    // Validate input
+    if(!values.title) {
+        errors.title = "Title field is empty!"
+    }
+
+    if(!values.categories) {
+        errors.categories = "Please enter at least 1 category"
+    }
+
+    if(!values.content) {
+        errors.content = "Content field is empty!"
+    }
+
+    // If empty, form submits
+    // If not empty, form does not submit
+    return errors
+}
+
 export default reduxForm({
+    validate: validate,
     form: 'PostsNewForm'
 })(PostsNew)
